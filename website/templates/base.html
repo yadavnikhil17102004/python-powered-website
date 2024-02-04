@@ -39,6 +39,29 @@
             </div>
         </nav>
 
+        <!-- Displaying error for incorrect inputs -->
+        {% with messages =  get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        {% for category, message in messages %}
+        {% if category == 'error' %}
+        <div class="alert alert-danger alert-dimisable fade show" role="alert" >
+            {{message}}
+            <button type="button" class="close" data-dismiss="alert">
+                <span aria-hidden="true">&curren;</span>
+            </button>
+        </div>
+        {% elif category == 'success'%}
+        <div class="alert alert-success alert-dimisable fade show" role="alert" >
+            {{message}}
+            <button type="button" class="close" data-dismiss="alert">
+                <span aria-hidden="true">&curren;</span>
+            </button>
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+
         <!-- navbar code end -->
         <!-- navbar code end -->
 
@@ -67,8 +90,17 @@
             .body{
                 background-color: #CDFADB;
             }
+            .footer{
+                position: fixed;
+                margin-bottom:  0px !important;
+                bottom: 0;
+                width: 100%;
+                height: 30px;
+            }
         </style>
 
     </body>
-
+    <footer class="footer">
+        <p>&copy; 2023 nikhil-yadav. All rights reserved.</p>
+      </footer>
 </html>
