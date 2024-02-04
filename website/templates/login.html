@@ -1,3 +1,39 @@
 {% extends "base.html" %}
 {% block title %}Note login page{% endblock %}
+{% block content %}
+<form method="POST" class="window">
+    <h3 align="center">Login</h3>
+    <div class="form-group">
+        <label for="email">Email Address</label>
+        <input
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            placeholder="Enter email" />
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input
+            type="password"
+            class="form-control"
+            id="password"
+            name="password"
+            placeholder="Enter your password" />
+    </div>
+</form>
 
+<style>
+    .window{
+        border: solid  4px black;
+        padding: 8px;
+        margin: auto;
+        width: 75%;
+        margin-top: 20px ;
+        background-color: #FFCF96;
+        text-align: left;
+        border-radius: 20px;
+    }
+</style>
+
+{% endblock %}
